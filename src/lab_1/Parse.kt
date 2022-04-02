@@ -9,7 +9,7 @@ fun parseBooks(books: String): List<Book> {
     val bookList = mutableListOf<Book>()
     val listOfBookLines = books.lines().toMutableList()
 
-    (0 until ((listOfBookLines.size))).forEach { i ->
+    (0 until (listOfBookLines.size)).forEach { i ->
         val authors = mutableListOf<String>()
         listOfBookLines[i] = listOfBookLines[i].substringAfter('.')   //getting titles
 
