@@ -7,7 +7,6 @@ fun parseBooks(books: String): List<Book> {
     }
 
     val bookList = mutableListOf<Book>()
-
     val listOfBookLines = books.lines().toMutableList()
 
     (0 until ((listOfBookLines.size))).forEach { i ->
@@ -73,7 +72,6 @@ fun getShortestTitle(shelf: List<Book>): List<Book> {
         if (book.title.length < shortestTitle) shortestTitle = book.title.length
     }
     return shelf.filter { it.title.length == shortestTitle }
-
 }
 
 //get the book with the shortest title
