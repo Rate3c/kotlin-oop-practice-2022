@@ -12,15 +12,9 @@ fun main() {
 
     val shelf: List<Book> = parseBooks(inputString)
 
-    println("Original books list before parse:\n$inputString")
-
     println("\nBOOKS LIST:\n" + getList(shelf))
-
-    println("\nThe oldest books list:\n" + getList(getOldestBook(shelf)))
-
-    println("\nThe latest books list:\n" + getList(getNewestBook(shelf)))
-
-    println("\nThe longest titled books list:\n" + getList(getLongestTitle(shelf)))
-
-    println("\nThe shortest titled books list:\n" + getList(getShortestTitle(shelf)))
+    println("\nThe oldest books:\n" + getList(getOldestBook(shelf)))
+    println("\nThe latest books:\n" + getList(getNewestBook(shelf)))
+    println("\nThe longest titled books:\n" + getList(getLongestTitle(shelf)))
+    println("\nThe shortest titled books:\n" + getList(getShortestTitle(shelf)))
 }
