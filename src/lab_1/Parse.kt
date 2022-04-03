@@ -7,25 +7,42 @@ fun parseBooks(books: String): List<Book> {
     }
 
     val bookList = mutableListOf<Book>()
+
     val listOfBookLines = books.lines().toMutableList()
 
     (0 until (listOfBookLines.size)).forEach { i ->
         val authors = mutableListOf<String>()
         listOfBookLines[i] = listOfBookLines[i].substringAfter('.')   //getting titles
 
-        val title: String = listOfBookLines[i].substringBefore("//").trim()    //delete titles
+        val title: String = listOfBookLines[i]
+            .substringBefore("//")
+            .trim()    //delete titles
+
         listOfBookLines[i] = listOfBookLines[i].substringAfter("//")  //get the sting after dropping the title
 
-        if (listOfBookLines[i].substringBefore("//").trim().isNotEmpty()) { //getting authors
+        if (listOfBookLines[i].substringBefore("//")
+                .trim()
+                .isNotEmpty()
+        ) {        //getting authors
             while (listOfBookLines[i].contains(',')) {
-                authors.add(listOfBookLines[i].substringBefore(',').trim())
+                authors.add(
+                    listOfBookLines[i]
+                        .substringBefore(',')
+                        .trim()
+                )
                 listOfBookLines[i] = listOfBookLines[i].substringAfter(',')
             }
-            authors.add(listOfBookLines[i].substringBefore("//").trim())
+            authors.add(
+                listOfBookLines[i]
+                    .substringBefore("//")
+                    .trim()
+            )
             listOfBookLines[i] = listOfBookLines[i].substringAfter("//")
         }
 
-        val year: Int = listOfBookLines[i].filter { it.isDigit() }.toInt() //getting years
+        val year: Int = listOfBookLines[i]
+            .filter { it.isDigit() }
+            .toInt() //getting years
         bookList.add(Book(title, authors, year))
     }
     return bookList
