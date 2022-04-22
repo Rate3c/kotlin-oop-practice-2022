@@ -18,7 +18,7 @@ fun main() {
 
     notes.removeNote("My task")
     println("All Notes:\n ${notes.getAllNotes()}\n")
-    println("Find note by title:\n ${notes.findNote("Cat information")}")
+    println("Find note by title:\n ${notes.findNote("Always pet your cat")}")
 
     println("Sort by date:\n ${notes.getSortedByDate()}")
     println("Sort by title:\n ${notes.getSortedByTitle()}")
