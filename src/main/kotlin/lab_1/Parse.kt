@@ -3,7 +3,7 @@ package lab_1
 fun parseBooks(books: String): List<Book> {
 
     if (books.isEmpty()) {   //if list of books is empty
-        throw error("Your list is empty")
+        return emptyList()
     }
 
     val bookList = mutableListOf<Book>()
@@ -48,17 +48,9 @@ fun parseBooks(books: String): List<Book> {
     return bookList
 }
 
-//check if we have any books and throw exception if not
-fun shelfIsEmpty(shelf: List<Book>) {
-    if (shelf.isEmpty()) {
-        throw IllegalArgumentException("There are no books on the shelf")
-    }
-}
-
 //get the list of books with the oldest year of publishing
 fun getOldestBook(shelf: List<Book>): List<Book> {
 
-    shelfIsEmpty(shelf)
     var oldestYear = Int.MAX_VALUE
 
     for (book in shelf) {
@@ -70,7 +62,6 @@ fun getOldestBook(shelf: List<Book>): List<Book> {
 //get the list of books with the latest year of publishing
 fun getNewestBook(shelf: List<Book>): List<Book> {
 
-    shelfIsEmpty(shelf)
     var newestYear = 1
 
     for (book in shelf) {
@@ -82,7 +73,6 @@ fun getNewestBook(shelf: List<Book>): List<Book> {
 //get the book with the shortest title
 fun getShortestTitle(shelf: List<Book>): List<Book> {
 
-    shelfIsEmpty(shelf)
     var shortestTitle = Int.MAX_VALUE
 
     for (book in shelf) {
@@ -94,7 +84,6 @@ fun getShortestTitle(shelf: List<Book>): List<Book> {
 //get the book with the shortest title
 fun getLongestTitle(shelf: List<Book>): List<Book> {
 
-    shelfIsEmpty(shelf)
     var longestTitle = 1
 
     for (book in shelf) {
