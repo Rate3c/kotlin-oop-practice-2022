@@ -10,31 +10,41 @@ class ShapeCollector {
     }
 
     //return biggest area shape
-    fun returnBiggest(): String {
+    fun returnBiggest(): ColoredShape2d {
         var maxArea = Double.MIN_VALUE
-        var biggestShape = listOfShapes[0]
 
-        for (shape in listOfShapes) {
-            if (shape.calcArea() > maxArea) {
-                maxArea = shape.calcArea()
-                biggestShape = shape
+        if (listOfShapes.size == 0) {
+            throw IllegalArgumentException("List of shapes is empty")
+        } else {
+            var biggestShape = listOfShapes[0]
+
+            for (shape in listOfShapes) {
+                if (shape.calcArea() > maxArea) {
+                    maxArea = shape.calcArea()
+                    biggestShape = shape
+                }
             }
+            return biggestShape
         }
-        return ("$biggestShape \nWith area: $maxArea")
     }
 
     //return smallest area shape
-    fun returnSmallest(): String {
+    fun returnSmallest(): ColoredShape2d {
         var minArea = Double.MAX_VALUE
-        var smallestShape = listOfShapes[0]
 
-        for (shape in listOfShapes) {
-            if (shape.calcArea() < minArea) {
-                minArea = shape.calcArea()
-                smallestShape = shape
+        if (listOfShapes.size == 0) {
+            throw IllegalArgumentException("List of shapes is empty")
+        } else {
+            var smallestShape = listOfShapes[0]
+
+            for (shape in listOfShapes) {
+                if (shape.calcArea() < minArea) {
+                    minArea = shape.calcArea()
+                    smallestShape = shape
+                }
             }
+            return smallestShape
         }
-        return ("$smallestShape \nWith area: $minArea")
     }
 
     //return the sum of all areas
@@ -58,12 +68,8 @@ class ShapeCollector {
     }
 
     //return list of shapes
-    fun getListOfShapes(): String {
-        var output = ""
-
-        listOfShapes.forEach { output += it.toString() + "\n" }
-
-        return output
+    fun getListOfShapes(): List<ColoredShape2d> {
+        return listOfShapes
     }
 
     //get the size of list of shapes
@@ -88,7 +94,7 @@ class ShapeCollector {
 
     //return shapes of certain type
     fun returnCertainType(desiredType: String): List<ColoredShape2d> {
-        var listOfDesiredType = mutableListOf<ColoredShape2d>()
+        val listOfDesiredType = mutableListOf<ColoredShape2d>()
         var counter = 0
 
         for (shape in listOfShapes) {
@@ -98,8 +104,14 @@ class ShapeCollector {
             }
         }
         if (counter == 0) {
-            println("There is no such shapes type in collection\n")
+            throw IllegalArgumentException("There is no such shapes type in collection\n")
         }
         return listOfDesiredType
     }
+
+    //didnt work :(
+    /*fun returnCertainType(Shapes: Class<out ColoredShape2d>): List<ColoredShape2d> {
+        return listOfShapes.filterIsInstance(Shapes)
+    }*/
+
 }

@@ -10,7 +10,7 @@ fun main() {
     //shapes
     val circle1 = Circle(4.0, black, aqua)
     val circle2 = Circle(5.0, green, aqua)
-    val triangle = Triangle(3.0, 4.0,5.0,green, black)
+    val triangle = Triangle(3.0, 3.0,3.0,green, black)
     val rectangle = Rectangle(10.0, 5.0, aqua, black)
     val square = Square(4.0, green, black)
 
@@ -22,7 +22,7 @@ fun main() {
     shapeCollection.addShape(rectangle)
     shapeCollection.addShape(square)
 
-    println("\nList of shapes:\n ${shapeCollection.getListOfShapes()}")
+    println("\nList of shapes:\n ${shapeCollection.getListOfShapes()}\n")
     println("Area of circle = " + circle1.calcArea())
     println("Area of triangle = " + triangle.calcArea())
     println("Area of rectangle = " + rectangle.calcArea())
@@ -37,5 +37,4 @@ fun main() {
     println("Shapes grouped by border color = ${shapeCollection.groupedByBorderColor()}\n")
     println("Shapes grouped by fill color = ${shapeCollection.groupedByFilledColor()}\n")
     println("Shapes of a certain type = ${shapeCollection.returnCertainType("Circle")}\n")
-
 }
