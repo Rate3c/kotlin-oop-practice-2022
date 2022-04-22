@@ -59,7 +59,7 @@ internal class ShapeCollectorTest {
         shapeCollector.addShape(shape2)
         shapeCollector.addShape(shape3)
 
-        assert(shapeCollector.colorBorderFilter(color1) == listOf(shape1, shape3))
+        assertEquals(shapeCollector.colorBorderFilter(color1), listOf(shape1, shape3))
     }
 
     @Test
