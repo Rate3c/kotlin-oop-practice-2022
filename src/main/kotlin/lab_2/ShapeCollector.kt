@@ -109,7 +109,7 @@ class ShapeCollector {
         return listOfDesiredType
     }
 
-    //didnt work :(
+    //didnt work out:(
     /*fun returnCertainType(Shapes: Class<out ColoredShape2d>): List<ColoredShape2d> {
         return listOfShapes.filterIsInstance(Shapes)
     }*/
