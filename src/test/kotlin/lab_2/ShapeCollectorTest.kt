@@ -93,7 +93,7 @@ internal class ShapeCollectorTest {
         shapeCollector.addShape(shape2)
         shapeCollector.addShape(shape3)
 
-        assertEquals(shapeCollector.getListOfShapes(),"$shape1\n$shape2\n$shape3\n")
+        assertEquals(shapeCollector.getListOfShapes(),listOf(shape1, shape2, shape3))
     }
 
     @Test
