@@ -1,0 +1,217 @@
+[
+    {
+        "type": "lab_2.Circle",
+        "radius": 4.0,
+        "borderColor": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        },
+        "fillColor": {
+            "red": 0,
+            "green": 255,
+            "blue": 255,
+            "transparency": 10
+        }
+    },
+    {
+        "type": "lab_2.Circle",
+        "radius": 5.0,
+        "borderColor": {
+            "red": 0,
+            "green": 128,
+            "blue": 0,
+            "transparency": 50
+        },
+        "fillColor": {
+            "red": 0,
+            "green": 255,
+            "blue": 255,
+            "transparency": 10
+        }
+    },
+    {
+        "type": "lab_2.Triangle",
+        "firstSide": 3.0,
+        "secondSide": 3.0,
+        "thirdSide": 3.0,
+        "borderColor": {
+            "red": 0,
+            "green": 128,
+            "blue": 0,
+            "transparency": 50
+        },
+        "fillColor": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        }
+    },
+    {
+        "type": "lab_2.Rectangle",
+        "firstSide": 10.0,
+        "secondSide": 5.0,
+        "borderColor": {
+            "red": 0,
+            "green": 255,
+            "blue": 255,
+            "transparency": 10
+        },
+        "fillColor": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        }
+    },
+    {
+        "type": "lab_2.Square",
+        "side": 4.0,
+        "borderColor": {
+            "red": 0,
+            "green": 128,
+            "blue": 0,
+            "transparency": 50
+        },
+        "fillColor": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        }
+    },
+    {
+        "type": "lab_2.Circle",
+        "radius": 4.0,
+        "borderColor": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        },
+        "fillColor": {
+            "red": 0,
+            "green": 255,
+            "blue": 255,
+            "transparency": 10
+        }
+    },
+    {
+        "type": "lab_2.Circle",
+        "radius": 5.0,
+        "borderColor": {
+            "red": 0,
+            "green": 128,
+            "blue": 0,
+            "transparency": 50
+        },
+        "fillColor": {
+            "red": 0,
+            "green": 255,
+            "blue": 255,
+            "transparency": 10
+        }
+    },
+    {
+        "type": "lab_2.Circle",
+        "radius": 2.0,
+        "borderColor": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        },
+        "fillColor": {
+            "red": 0,
+            "green": 128,
+            "blue": 0,
+            "transparency": 50
+        }
+    },
+    {
+        "type": "lab_2.Square",
+        "side": 7.0,
+        "borderColor": {
+            "red": 0,
+            "green": 255,
+            "blue": 255,
+            "transparency": 10
+        },
+        "fillColor": {
+            "red": 255,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        }
+    },
+    {
+        "type": "lab_2.Rectangle",
+        "firstSide": 6.0,
+        "secondSide": 4.0,
+        "borderColor": {
+            "red": 255,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        },
+        "fillColor": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        }
+    },
+    {
+        "type": "lab_2.Triangle",
+        "firstSide": 3.0,
+        "secondSide": 4.0,
+        "thirdSide": 5.0,
+        "borderColor": {
+            "red": 0,
+            "green": 128,
+            "blue": 0,
+            "transparency": 50
+        },
+        "fillColor": {
+            "red": 255,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        }
+    },
+    {
+        "type": "lab_2.Circle",
+        "radius": 9.0,
+        "borderColor": {
+            "red": 0,
+            "green": 128,
+            "blue": 0,
+            "transparency": 50
+        },
+        "fillColor": {
+            "red": 255,
+            "green": 0,
+            "blue": 0,
+            "transparency": 0
+        }
+    },
+    {
+        "type": "lab_2.Rectangle",
+        "firstSide": 5.0,
+        "secondSide": 2.0,
+        "borderColor": {
+            "red": 0,
+            "green": 255,
+            "blue": 255,
+            "transparency": 10
+        },
+        "fillColor": {
+            "red": 0,
+            "green": 128,
+            "blue": 0,
+            "transparency": 50
+        }
+    }
+]

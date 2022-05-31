@@ -1,11 +1,11 @@
 package lab_2
 
-class ShapeCollector {
+class ShapeCollector<T: ColoredShape2d> {
 
-    private val listOfShapes: MutableList<ColoredShape2d> = mutableListOf()
+    var listOfShapes: MutableList<T> = mutableListOf()
 
     //add new shape to list
-    fun addShape(shape: ColoredShape2d) {
+    fun addShape(shape: T) {
         listOfShapes.add(shape)
     }
 
@@ -58,18 +58,18 @@ class ShapeCollector {
     }
 
     //searching by color of border
-    fun colorBorderFilter(desiredBorderColor: Color): List<ColoredShape2d> {
+    fun colorBorderFilter(desiredBorderColor: Color): List<T> {
         return listOfShapes.filter { it.borderColor == desiredBorderColor }
     }
 
     //searching by fill color
-    fun fillColorFilter(desiredFilledColor: Color): List<ColoredShape2d> {
+    fun fillColorFilter(desiredFilledColor: Color): List<T> {
         return listOfShapes.filter { it.fillColor == desiredFilledColor }
     }
 
     //return list of shapes
-    fun getListOfShapes(): List<ColoredShape2d> {
-        return listOfShapes
+    fun getListOfMyShapes(): List<T> {
+        return listOfShapes.toList()
     }
 
     //get the size of list of shapes
@@ -83,35 +83,41 @@ class ShapeCollector {
     }
 
     //return shapes grouped by border color
-    fun groupedByBorderColor(): Map<Color, List<ColoredShape2d>> {
+    fun groupedByBorderColor(): Map<Color, List<T>> {
         return listOfShapes.groupBy { it.borderColor }
     }
 
     //return shapes grouped by fill color
-    fun groupedByFilledColor(): Map<Color, List<ColoredShape2d>> {
+    fun groupedByFilledColor(): Map<Color, List<T>> {
         return listOfShapes.groupBy { it.fillColor }
     }
 
-    //return shapes of certain type
-    fun returnCertainType(desiredType: String): List<ColoredShape2d> {
-        val listOfDesiredType = mutableListOf<ColoredShape2d>()
-        var counter = 0
-
-        for (shape in listOfShapes) {
-            if (shape.toString().contains(desiredType)) {
-                listOfDesiredType.add(shape)
-                counter++
+    inline fun <reified Type> returnCertainType(): List<T> {
+        return if (listOfShapes.isEmpty())
+            emptyList()
+        else {
+            val newList = mutableListOf<T>()
+            for (shape in listOfShapes) {
+                if (shape is Type) {
+                    newList.add(shape)
+                }
             }
+            return newList
         }
-        if (counter == 0) {
-            throw IllegalArgumentException("There is no such shapes type in collection\n")
-        }
-        return listOfDesiredType
     }
 
-    //didnt work out:(
-    /*fun returnCertainType(Shapes: Class<out ColoredShape2d>): List<ColoredShape2d> {
-        return listOfShapes.filterIsInstance(Shapes)
-    }*/
+    //add new list of shapes to other list of shapes
+    fun addAll(list: List<T>) {
+        list.forEach { listOfShapes.add(it) }
+    }
 
+    //return sorted list of shapes
+    fun getSorted(comparator: Comparator<T>): List<T>
+    {
+        return listOfShapes.sortedWith(comparator)
+    }
+
+    fun getSize(): Int{
+        return listOfShapes.size
+    }
 }

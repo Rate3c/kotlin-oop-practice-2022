@@ -13,6 +13,7 @@ interface ColoredShape2d : Shape2d {
     val fillColor: Color
 }
 
+@kotlinx.serialization.Serializable
 data class Circle(
     val radius: Double,
     override val borderColor: Color,
@@ -27,8 +28,13 @@ data class Circle(
     override fun calcArea(): Double {
         return PI * radius.pow(2)
     }
+
+    override fun toString(): String {
+        return "Circle($radius, $borderColor, $fillColor)"
+    }
 }
 
+@kotlinx.serialization.Serializable
 data class Square(
     val side: Double,
     override val borderColor: Color,
@@ -43,8 +49,13 @@ data class Square(
     override fun calcArea(): Double {
         return side.pow(2)
     }
+
+    override fun toString(): String {
+        return "Square($side, $borderColor, $fillColor)"
+    }
 }
 
+@kotlinx.serialization.Serializable
 data class Triangle(
     val firstSide: Double,
     val secondSide: Double,
@@ -70,8 +81,13 @@ data class Triangle(
 
         return sqrt(semiPerimeter * (semiPerimeter - firstSide) * (semiPerimeter - secondSide) * (semiPerimeter - thirdSide))
     }
+
+    override fun toString(): String {
+        return "Triangle($firstSide, $secondSide, $thirdSide, $borderColor, $fillColor)"
+    }
 }
 
+@kotlinx.serialization.Serializable
 data class Rectangle(
     val firstSide: Double,
     val secondSide: Double,
@@ -87,5 +103,9 @@ data class Rectangle(
 
     override fun calcArea(): Double {
         return firstSide * secondSide
+    }
+
+    override fun toString(): String {
+        return "Rectangle($firstSide, $secondSide, $borderColor, $fillColor)"
     }
 }
