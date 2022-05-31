@@ -1,8 +1,7 @@
 package lab_3
 
-import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
+import org.junit.Assert.assertEquals
+import org.junit.Test
 import java.net.URL
 
 internal class NoteServiceTest {

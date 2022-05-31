@@ -1,5 +1,6 @@
 package lab_2
 
+@kotlinx.serialization.Serializable
 data class Color (
     val red: Int,
     val green: Int,
